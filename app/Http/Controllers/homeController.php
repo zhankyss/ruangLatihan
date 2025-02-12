@@ -10,6 +10,7 @@ class homeController extends Controller
 {
     public function pondokName(){
         $data = User::all();
-        return view('pages.dashboard',['data' => $data,]);
+        return view('dashboard',['data' => $data,]);
     }
+
 }

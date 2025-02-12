@@ -23,22 +23,22 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        $negaras = Negara::factory(3)->create();
+        $negaras = Negara::factory(2)->create();
 
         foreach ($negaras as $negara) {
-            $Provinsis = Provinsi::factory(3)->create(['negara_id' => $negara->id]);
+            $Provinsis = Provinsi::factory(2)->create(['negara_id' => $negara->id]);
 
             foreach ($Provinsis as $provinsi) {
-                $kotas = Kota::factory(3)->create(['provinsi_id' => $provinsi->id]);
+                $kotas = Kota::factory(2)->create(['provinsi_id' => $provinsi->id]);
 
                 foreach ($kotas as $kota) {
-                    $kecamatans = Kecamatan::factory(3)->create(['kota_id' => $kota->id]);
+                    $kecamatans = Kecamatan::factory(2)->create(['kota_id' => $kota->id]);
 
                     foreach ($kecamatans as $kecamatan) {
-                        $desas = Desa::factory(3)->create(['kecamatan_id' => $kecamatan->id]);
+                        $desas = Desa::factory(2)->create(['kecamatan_id' => $kecamatan->id]);
 
                         foreach ($desas as $desa) {
-                            $alamats = Alamat::factory(10)->create(['desa_id' => $desa->id]);
+                            $alamats = Alamat::factory(2)->create(['desa_id' => $desa->id]);
 
                             for ($i = 0; $i < count($alamats); $i++) {
                                 Pondok::factory()->create();
