@@ -8,7 +8,7 @@ use App\Http\Controllers\homeController;
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/home', function () {
-        $log = DB::table('users')->where('name', Auth::user()->name)->first();
+        $log = DB::table('users')->where('name', auth::user()->name)->first();
         return view('dashboard',['email'=> $log->name]);
     });
     Route::get('/', [homeController::class, 'pondokName']);
