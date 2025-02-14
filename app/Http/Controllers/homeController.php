@@ -15,6 +15,6 @@ class homeController extends Controller
 
         $allData = User::all();
 
-        return view('dashboard');
+        return view('dashboard', ['alldata' => $allData, 'data' => $data]);
     }
 }
