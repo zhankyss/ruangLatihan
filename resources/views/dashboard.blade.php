@@ -25,7 +25,7 @@
                                 <h4>Total Users</h4>
                             </div>
                             <div class="card-body">
-                                {{$allData->count()}}
+                                {{-- {{$allData->count()}} --}}
                             </div>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            {{-- <div class="row">
 
                 <div class="col-12">
                     <div class="card card-statistic-1">
@@ -104,7 +104,7 @@
                                                     method="POST" class="d-inline ml-1">
                                                     @csrf
                                                     {{-- @method('DELETE') --}}
-                                                    <button type="hidden" value="EDIT" name="_method" class="btn btn-sm btn-primary btn-icon"
+                                                    {{-- <button type="hidden" value="EDIT" name="_method" class="btn btn-sm btn-primary btn-icon"
                                                         data-toggle="tooltip" title="Edit">
                                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                         <i class="fas fa-pencil"></i>
@@ -128,14 +128,14 @@
                                 </table>
                                 <div
                                 class="float-right mt-3 mb-3 card-footer page-item disa ">
-                                    {{ $data->withQueryString()->links() }}
-                                </div>
+                                    {{-- {{ $data->withQueryString()->links() }} --}}
+                                {{-- </div>
                             </div>
                     </div>
 
-                </div>
+                </div> 
 
-            </div>
+            </div> --}}
         </section>
     </div>
 @endsection
