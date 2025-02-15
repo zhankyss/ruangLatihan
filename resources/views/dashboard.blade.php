@@ -12,7 +12,7 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Hello  {{ $name }}, How are you?</h1>
+                <h1>Hello {{ $name }}, How are you?</h1>
             </div>
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
@@ -78,6 +78,13 @@
             </div>
 
 
+            <form action="{{ route('create') }}" method="GET" class="d-inline ml-1">
+                <button type="submit" class="btn btn-primary">
+                    <i class="far fa-edit"></i> Create
+                </button>
+            </form>
+            
+
             <div class="table-responsive">
                 <table class="table-striped mb-0 table">
                     <thead>
@@ -102,12 +109,13 @@
                                     <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit">
                                         <i class="fas fa-pencil-alt"></i>
                                     </a>
-                                    <form action="{{ route('userWeb.destroy', $user->id) }}" method="POST" class="d-inline ml-1">
+                                    <form action="{{ route('userWeb.destroy', $user->id) }}" method="POST"
+                                        class="d-inline ml-1">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete">
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                                        <i class="fas fa-trash"></i>
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                                            <i class="fas fa-trash"></i>
                                         </button>
                                     </form>
                                 </td>

@@ -30,4 +30,14 @@ class HomeController extends Controller
             'data'    => $data
         ]);
     }
+
+    public function create()
+    {
+        return view('auth'); 
+    }
+
+    public function backHome()
+    {
+        return redirect()->route('home');
+    }
 }

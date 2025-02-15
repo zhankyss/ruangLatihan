@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\createUser;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -14,5 +15,8 @@ Route::middleware(['auth'])->group(function(){
     // });
     Route::get('/', [homeController::class, 'pondokName'])->name('home');
     Route::get('/home', [homeController::class, 'pondokName']);
+    Route::get('/create', [homeController::class, 'create'])->name('create');
+    Route::get('/backHome', [homeController::class, 'backHome'])->name('backHome');
     Route::resource('userWeb', userWebConntroller::class);
+    Route::resource('userCreate', createUser::class);
 });

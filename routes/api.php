@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\authController;
+use App\Http\Controllers\createUser;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\PrayerTimeController;
 use App\Http\Controllers\userController;

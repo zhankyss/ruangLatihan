@@ -102,10 +102,7 @@ class userController extends Controller
      */
     public function destroy(string $id)
     {
-        Log::info("delete");
         $user = User::findOrfail($id);
-
-        Log::info("delete1");
 
        if(!$user){
         return response()->json([
@@ -113,7 +110,6 @@ class userController extends Controller
         ], 400);
 
        }
-        Log::info("delete2");
 
         $user->delete();
 
