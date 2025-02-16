@@ -12,7 +12,8 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Hello {{ $name }}, How are you?</h1>
+                {{-- <h1>Hello {{ $name }}</h1>
+                <h1 class="text-center">, How are you?</h1> --}}
                 <div class="card mt-4">
                     <div class="card-header">
                         <h4>Jadwal Shalat</h4>

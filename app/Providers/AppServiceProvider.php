@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Services\PrayerService;
 use GuzzleHttp\Client;
 use Illuminate\Support\ServiceProvider;
+use PrayerTimeService;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,8 +14,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(PrayerService::class, function ($app) {
-            return new PrayerService(new Client());
+        $this->app->singleton(PrayerTimeService::class, function($app){
+            return new PrayerTimeService(new \GuzzleHttp\Client());
         });
     }
 
