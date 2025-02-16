@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use App\Services\PrayerService;
 use GuzzleHttp\Client;
+use App\Services\PrayerService;
+use App\Services\PrayerTimeService;
 use Illuminate\Support\ServiceProvider;
-use PrayerTimeService;
 
 class AppServiceProvider extends ServiceProvider
 {

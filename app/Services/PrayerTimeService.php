@@ -1,4 +1,5 @@
-<?php 
+<?php
+namespace App\Services;
 
 use GuzzleHttp\Client;
 
@@ -16,16 +17,22 @@ class PrayerTimeService
         $response = $this->client->get("https://api.myquran.com/v2/sholat/kota/cari/{$cityName}");
         $data = json_decode($response->getBody()->getContents(), true);
 
-        if(!$data['data'] && !empty($data['data'])){
-            return $data['data'] [0] ['id'];
+        if (!empty($data['data'])) {
+            return $data['data'][0]['id'];
         }
-
+        
         return null;
     }
 
     public function getPrayerTimes($cityId, $date)
     {
-        $response = $this->client->get("https://api.myquran.com/v2/sholat/kota/cari/{$cityId}/{$date}");
+        $response = $this->client->get("https://api.myquran.com/v2/sholat/jadwal/{$cityId}/{$date}");
         $data = json_decode($response->getBody()->getContents(), true);
+
+        if (!isset($data['data']) || empty($data['data'])) {
+            return null;
+        }
+
+        return $data['data'];
     }
 }

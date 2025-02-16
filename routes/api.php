@@ -9,11 +9,10 @@ use App\Http\Controllers\PrayerTimeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserWebController;
 
+
+Route::get('prayer-time/{city}/{date}', [PrayerTimeController::class, 'index']);
 // Endpoint untuk login
 Route::post('login', [AuthController::class, 'login'])->name('api.login');
-
-// Endpoint untuk mendapatkan jadwal sholat berdasarkan lokasi & tanggal
-
 
 // Middleware Sanctum untuk proteksi API
 Route::middleware(['auth:sanctum'])->group(function () {
