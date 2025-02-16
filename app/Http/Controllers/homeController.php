@@ -2,13 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Services\PrayerService;
+use App\Services\PrayerTimeService;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
+    protected $prayerTimeService;
+    protected $timeNow;
+
+    public function __construct(PrayerTimeService $prayerTimeService)
+    {
+        $this->prayerTimeService = $prayerTimeService; // Fix assignment
+        $this->timeNow = date('Y-m-d');
+    }
+
     public function pondokName()
     {
         $user = Auth::user();
@@ -21,12 +32,21 @@ class HomeController extends Controller
         $data = User::query()->orderBy('id', 'desc')->paginate(10);
         $allData = User::limit(50)->get();
 
+        // Ambil ID kota untuk waktu shalat
+        $cityId = $this->prayerTimeService->getCityId('klaten');
 
-        return view('dashboard', [
-            'name'         => $user->name,
-            'alldata'      => $allData,
-            'data'         => $data,
-        ]);
+        if (!$cityId) {
+            return response()->json(['error' => 'City not found'], 404);
+        }
+
+        // Ambil waktu shalat
+        $prayerTime = $this->prayerTimeService->getPrayerTimes($cityId, $this->timeNow);
+
+        Log::info($prayerTime);
+
+        // dd($prayerTime);
+
+        return view('dashboard', ['data' => $data, 'allData' => $allData, 'prayerTime' => $prayerTime]);
     }
 
     public function create()

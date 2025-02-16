@@ -22,18 +22,23 @@
                         <div class="row">
                             <div class="col mb-lg-0 mb-4 text-center">
                                 <div class="font-weight-bold mt-2">Subuh</div>
+                                <h5>{{ optional($prayerTime['jadwal'])['imsak'] ?? 'Data tidak tersedia' }}</h5>
                             </div>
                             <div class="col mb-lg-0 mb-4 text-center">
                                 <div class="font-weight-bold mt-2">Dzuhur</div>
+                                <h5>{{ optional($prayerTime['jadwal'])['dzuhur'] ?? 'Data tidak tersedia' }}</h5>
                             </div>
                             <div class="col mb-lg-0 mb-4 text-center">
                                 <div class="font-weight-bold mt-2">Ashar</div>
+                                <h5>{{ optional($prayerTime['jadwal'])['ashar'] ?? 'Data tidak tersedia' }}</h5>
                             </div>
                             <div class="col mb-lg-0 mb-4 text-center">
                                 <div class="font-weight-bold mt-2">Maghrib</div>
+                                <h5>{{ optional($prayerTime['jadwal'])['maghrib'] ?? 'Data tidak tersedia' }}</h5>
                             </div>
                             <div class="col mb-lg-0 mb-4 text-center">
                                 <div class="font-weight-bold mt-2">Isya</div>
+                                <h5>{{ optional($prayerTime['jadwal'])['isya'] ?? 'Data tidak tersedia' }}</h5>
                             </div>
                         </div>
                     </div>
@@ -50,7 +55,7 @@
                                 <h4>Total Users</h4>
                             </div>
                             <div class="card-body">
-                                {{ $alldata->count() }}
+                                {{ $allData->count() }}
                             </div>
                         </div>
                     </div>
