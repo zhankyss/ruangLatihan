@@ -13,6 +13,30 @@
         <section class="section">
             <div class="section-header">
                 <h1>Hello {{ $name }}, How are you?</h1>
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h4>Jadwal Shalat</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col mb-lg-0 mb-4 text-center">
+                                <div class="font-weight-bold mt-2">Subuh</div>
+                            </div>
+                            <div class="col mb-lg-0 mb-4 text-center">
+                                <div class="font-weight-bold mt-2">Dzuhur</div>
+                            </div>
+                            <div class="col mb-lg-0 mb-4 text-center">
+                                <div class="font-weight-bold mt-2">Ashar</div>
+                            </div>
+                            <div class="col mb-lg-0 mb-4 text-center">
+                                <div class="font-weight-bold mt-2">Maghrib</div>
+                            </div>
+                            <div class="col mb-lg-0 mb-4 text-center">
+                                <div class="font-weight-bold mt-2">Isya</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
@@ -71,32 +95,6 @@
                             </div>
                             <div class="card-body">
                                 47
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                
-                <div class="card mt-4">
-                    <div class="card-header">
-                        <h4>Jadwal Shalat</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col mb-lg-0 mb-4 text-center">
-                                <div class="font-weight-bold mt-2">Subuh</div>
-                            </div>
-                            <div class="col mb-lg-0 mb-4 text-center">
-                                <div class="font-weight-bold mt-2">Dzuhur</div>
-                            </div>
-                            <div class="col mb-lg-0 mb-4 text-center">
-                                <div class="font-weight-bold mt-2">Ashar</div>
-                            </div>
-                            <div class="col mb-lg-0 mb-4 text-center">
-                                <div class="font-weight-bold mt-2">Maghrib</div>
-                            </div>
-                            <div class="col mb-lg-0 mb-4 text-center">
-                                <div class="font-weight-bold mt-2">Isya</div>
                             </div>
                         </div>
                     </div>
