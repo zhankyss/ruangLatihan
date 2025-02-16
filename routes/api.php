@@ -2,25 +2,27 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\authController;
-use App\Http\Controllers\createUser;
-use App\Http\Controllers\homeController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CreateUser;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PrayerTimeController;
-use App\Http\Controllers\userController;
-use App\Http\Controllers\userWebConntroller;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserWebController;
+
+// Endpoint untuk login
+Route::post('login', [AuthController::class, 'login'])->name('api.login');
+
+// Endpoint untuk mendapatkan jadwal sholat berdasarkan lokasi & tanggal
 
 
-Route::get('prayer-time/{location}/{date}', [PrayerTimeController::class, 'index']);
-
-Route::post('login', [authController::class, 'login'])->name('api.login');
-
-Route::middleware(['auth:sanctum'])->group(function(){
-    Route::get('/user', function (Request $request){
+// Middleware Sanctum untuk proteksi API
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::get('/user', function (Request $request) {
         return $request->user();
     });
-    Route::apiResource('user', userController::class);
 
-    Route::post('logout', [authController::class, 'logout'])->name('api.logout');
+    Route::apiResource('user', UserController::class);
 
-    
+    // Endpoint untuk logout
+    Route::post('logout', [AuthController::class, 'logout'])->name('api.logout');
 });

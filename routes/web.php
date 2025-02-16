@@ -17,6 +17,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/home', [homeController::class, 'pondokName']);
     Route::get('/create', [homeController::class, 'create'])->name('create');
     Route::get('/backHome', [homeController::class, 'backHome'])->name('backHome');
+    Route::post('/users', [userWebConntroller::class, 'store'])->name('users.store');
     Route::resource('userWeb', userWebConntroller::class);
     Route::resource('userCreate', createUser::class);
 });

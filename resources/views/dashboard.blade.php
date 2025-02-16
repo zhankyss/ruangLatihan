@@ -75,6 +75,34 @@
                         </div>
                     </div>
                 </div>
+
+                
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h4>Jadwal Shalat</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col mb-lg-0 mb-4 text-center">
+                                <div class="font-weight-bold mt-2">Subuh</div>
+                            </div>
+                            <div class="col mb-lg-0 mb-4 text-center">
+                                <div class="font-weight-bold mt-2">Dzuhur</div>
+                            </div>
+                            <div class="col mb-lg-0 mb-4 text-center">
+                                <div class="font-weight-bold mt-2">Ashar</div>
+                            </div>
+                            <div class="col mb-lg-0 mb-4 text-center">
+                                <div class="font-weight-bold mt-2">Maghrib</div>
+                            </div>
+                            <div class="col mb-lg-0 mb-4 text-center">
+                                <div class="font-weight-bold mt-2">Isya</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
             </div>
 
 
@@ -90,7 +118,7 @@
                     <thead>
                         <tr>
                             <th>Email</th>
-                            <th>Author</th>
+                            <th>User</th>
                             <th>Action</th>
                         </tr>
                     </thead>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class userWebConntroller extends Controller
 {
@@ -20,9 +21,22 @@ class userWebConntroller extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'password' => 'required|min:6',
+        ]);
 
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        session()->flash('success', 'User ' . $user->name . ' created successfully');
+
+        return redirect()->route('home')->with('success', 'User ' . $user->email . ' created successfully');
+    }
     /**
      * Display the specified resource.
      */
